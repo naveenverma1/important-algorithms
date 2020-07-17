@@ -50,5 +50,12 @@ for(int n: nums){
 could be replaced by
 
 Arrays.stream(nums).forEach(e->map.put(e, map.getOrDefault(e, 0)) + 1)
+////////////////////////////////////////////////////////////////////////////////////////////////////
+if(!freqMap.containsKey(freq)){
+               freqMap.put(freq, new LinkedList<>());
+           }
+by
+
+freqMap.putIfAbsent(freq, new LinkedList<>());
 
 end-----------------------------------------------------------------------------------------------------------

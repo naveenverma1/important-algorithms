@@ -40,4 +40,15 @@ public static int upper(int arr[],int key){
     return low;
 }
 
+..........................new.....................................................................................
+
+for(int n: nums){
+            map.put(n, map.getOrDefault(n,0)+1);
+        }
+        
+        
+could be replaced by
+
+Arrays.stream(nums).forEach(e->map.put(e, map.getOrDefault(e, 0)) + 1)
+
 end-----------------------------------------------------------------------------------------------------------

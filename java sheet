@@ -10,6 +10,11 @@ ArrayList<Integer> arraylist = new ArrayList<Integer>();
     arraylist.set(1, 22);
     //Updating 3rd element
 
+
+
+
+
+
 lowerbound and upperbound---------------------------------------------------------------------------------------
 public static long lower(long arr[],long key){
         int low = 0;
@@ -40,6 +45,12 @@ public static int upper(int arr[],int key){
     return low;
 }
 
+
+
+
+
+
+
 ..........................new.....................................................................................
 
 for(int n: nums){
@@ -58,14 +69,44 @@ by
 
 freqMap.putIfAbsent(freq, new LinkedList<>());
 
+
+
+
+
+
+
 ..........................new.....................................................................................
 
 2<<=1; == 2*2;
 2<<=2; == 2*4;
 
+
+
+
+
+
 ..........................new.....................................................................................
 list to integers to array of integers
 
 int[] array = list.stream().mapToInt(i->i).toArray();
+
+
+
+
+
+.........................new.....................................................................................
+
+char array to string
+char[] data = new char[size];
+String text = String.copyValueOf(data);
+
+or
+
+String text = String.valueOf(data);
+
+is arguably better (encapsulates the new String call).
+
+
+
 
 end-----------------------------------------------------------------------------------------------------------

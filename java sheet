@@ -107,6 +107,14 @@ String text = String.valueOf(data);
 is arguably better (encapsulates the new String call).
 
 
+.........................new.....................................................................................
+
+int[] a = new int[]{1,2,3,4,5};
+int[] b = a.clone();
+
+int[] a = new int[5]{1,2,3,4,5};
+int[] b = Arrays.copyOf(a, a.length);
+
 
 
 end-----------------------------------------------------------------------------------------------------------

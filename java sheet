@@ -11,10 +11,6 @@ ArrayList<Integer> arraylist = new ArrayList<Integer>();
     //Updating 3rd element
 
 
-
-
-
-
 lowerbound and upperbound---------------------------------------------------------------------------------------
 public static long lower(long arr[],long key){
         int low = 0;

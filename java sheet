@@ -82,7 +82,7 @@ freqMap.putIfAbsent(freq, new LinkedList<>());
 
 
 ..........................new.....................................................................................
-list to integers to array of integers
+list of integers to array of integers
 
 int[] array = list.stream().mapToInt(i->i).toArray();
 

@@ -1,0 +1,80 @@
+Q. There are n rectangles of the same size: w in width and h in length. It is required to find a square of 
+the smallest size into which these rectangles can be packed. Rectangles cannot be rotated.
+
+import java.io.*;
+import java.util.*;
+import java.lang.Math;
+
+public class Main{
+	static BufferedReader reader;
+	static StringTokenizer tokenizer;
+	static PrintWriter writer;
+
+	static int nextInt() throws IOException {
+		return Integer.parseInt(nextToken());
+	}
+
+	static long nextLong() throws IOException {
+		return Long.parseLong(nextToken());
+	}
+
+	static double nextDouble() throws IOException {
+		return Double.parseDouble(nextToken());
+	}
+
+	static String nextToken() throws IOException {
+		while (tokenizer == null || !tokenizer.hasMoreTokens()) {
+			tokenizer = new StringTokenizer(reader.readLine());
+		}
+		return tokenizer.nextToken();
+	}
+	static String nexts() throws IOException {
+	  	  tokenizer = new StringTokenizer(reader.readLine());
+	   	 String s="";
+	   	 while (tokenizer.hasMoreTokens()) {
+			s+=tokenizer.nextElement()+" ";
+		}
+		return s;
+	}
+
+	public static void main(String[] args) throws IOException {
+		reader = new BufferedReader(new InputStreamReader(System.in));
+		tokenizer = null;
+		writer = new PrintWriter(System.out);
+		solve();
+		reader.close();
+		writer.close();
+	}
+	public static int good(long x,long w, long h,long n){
+	    long c=(x/w)*(x/h);
+	    if(c>=n){
+	        return 1;
+	    }
+	    else{
+	        return 0;
+	    }
+	}
+	private static void solve() throws IOException {
+	
+			long w = nextLong();
+			long h = nextLong();
+			long n = nextLong();
+			
+			long l=0;
+			long r=1;
+			while(good(r,w,h,n)==0){
+			    r=r*2;
+			}
+			while(l<=r){
+			    long mid=(r-l)/2+l;
+			    if(good(mid,w,h,n)==1){
+			        r=mid-1;
+			    }
+			    else{
+			        l=mid+1;
+			    }
+			}
+            writer.println(l);   
+            }
+			
+}

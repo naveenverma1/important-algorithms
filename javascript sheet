@@ -1,1 +1,2 @@
 
+await promise.catch(e => void e);//to ignore promise errors is void that error

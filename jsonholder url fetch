@@ -9,7 +9,7 @@
 // 	userId;
 // 	title;
 // 	body;
-// 	comments [];
+// 	comments [];  // this is not present in both url json data
 // },
 // {},
 // ...
@@ -37,3 +37,4 @@ console.log(posts);
 
     });
 });
+//  comments [];  // this is not present in both url json data

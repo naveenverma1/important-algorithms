@@ -1,0 +1,39 @@
+// POSTS_URL = `https://jsonplaceholder.typicode.com/posts`;
+// COMMENTS_URL = `https://jsonplaceholder.typicode.com/comments`;
+
+//  to fetch all the posts and comments respectively. Do the following.
+
+// Map all the comments to the posts they belong to. The resultant data after mapping should be of below structure.
+// Posts [{
+// 	id;
+// 	userId;
+// 	title;
+// 	body;
+// 	comments [];
+// },
+// {},
+// ...
+// ]
+const request = require('request')
+let options = {json: true};
+
+request('https://jsonplaceholder.typicode.com/posts/',options,  function(error, response, body1) {
+    if(error) throw error;
+  
+    request('https://jsonplaceholder.typicode.com/comments/',options,   function(errp,resp, body2){
+        if(errp) throw errp;
+
+ var arr =[]
+
+
+for(let i=0;i<40;i++){
+   
+ arr.push(Object.assign({},body1[i],body2[i]));
+
+}
+
+let posts = arr.map(({id, userId,title,body}) => ({id, userId,title,body}));
+console.log(posts);
+
+    });
+});
